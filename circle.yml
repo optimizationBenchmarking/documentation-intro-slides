@@ -20,5 +20,4 @@ dependencies:
 test:
   override:
     - ./scripts/pdflatex.sh intro-slides
-        timeout: 10000
     - cp "intro-slides.pdf" "$CIRCLE_ARTIFACTS"
