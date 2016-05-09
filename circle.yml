@@ -7,7 +7,7 @@ machine:
 # Install the newest version of ant.
   pre:
   - sudo apt-get -q -y update
-  - sudo apt-get -q -y install texlive texlive-lang-cjk texlive-xetex
+  - sudo apt-get -q -y install texlive texlive-lang-cjk texlive-xetex texlive-science
     
 # We do nothing here.
 dependencies:
@@ -18,5 +18,5 @@ dependencies:
 # terminated unexpectedly.
 test:
   override:
-    - ./scripts/pdflatex.sh intro-slides
+    - ./scripts/xelatex.sh intro-slides
     - cp "intro-slides.pdf" "$CIRCLE_ARTIFACTS"
