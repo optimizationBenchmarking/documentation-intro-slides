@@ -11,6 +11,8 @@ machine:
   - sudo apt-get -q -y -f purge texlive
   - sudo apt-get -q -y -f autoclean
   - sudo apt-get -q -y -f autoremove
+  - sudo apt-get -q -y -f install
+  - sudo dpkg --configure -a
   - sudo apt-get -q -y -f install texlive-full texlive-xetex
     
 # We do nothing here.
