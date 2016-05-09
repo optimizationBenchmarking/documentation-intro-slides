@@ -8,7 +8,10 @@ machine:
   pre:
 # Install the required Ant version
   - sudo apt-get -q -y -f update
-  - sudo apt-get -q -y -f install texlive-xetex texlive-fonts-extra texlive-latex-extra
+  - sudo apt-get -q -y -f purge texlive
+  - sudo apt-get -q -y -f autoclean
+  - sudo apt-get -q -y -f autoremove
+  - sudo apt-get -q -y -f install texlive-full texlive-xetex
     
 # We do nothing here.
 dependencies:
