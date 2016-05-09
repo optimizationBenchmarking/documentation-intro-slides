@@ -7,7 +7,7 @@ machine:
 # Install the newest version of ant.
   pre:
 # Install the required Ant version
-  - sudo apt-get -q -y -f purge texlive texlive-full texlive-xetex texlive-latex-recommended texlive-latex-base
+  - sudo apt-get -q -y -f purge texlive texlive-full texlive-xetex texlive-latex-recommended texlive-latex-base texlive-base texlive-common
   - sudo apt-get -q -y -f autoclean
   - sudo apt-get -q -y -f autoremove
   - sudo apt-get -q -y -f install
