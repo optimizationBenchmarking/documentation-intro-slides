@@ -14,7 +14,7 @@ machine:
   - sudo dpkg --configure -a
   - sudo apt-get clean
   - sudo apt-get -q -y -f update
-  - sudo apt-get -q -y -f install texlive texlive-xetex
+  - sudo apt-get -q -y -f install texlive-base texlive-common texlive-latex-recommended texlive-latex-recommended texlive texlive-xetex
     
 # We do nothing here.
 dependencies:
