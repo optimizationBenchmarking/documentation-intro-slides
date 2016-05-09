@@ -3,7 +3,12 @@
 ##
 ## https://circleci.com/gh/optimizationBenchmarking/documentation-intro-slides
 #
-   
+machine:
+# Install the newest version of ant.
+  pre:
+  - sudo apt-get -q -y -f update
+  - sudo apt-get -q -y -f install texlive-full texlive-lang-cjk texlive-xelatex
+    
 # We do nothing here.
 dependencies:
   override:
