@@ -8,7 +8,7 @@ machine:
   pre:
 # Install the required Ant version
   - sudo apt-get -q -y -f update
-  - sudo apt-get -q -y -f install texlive-lang-chinese
+  - sudo apt-get -q -y -f install texlive-xetex texlive-fonts-extra texlive-latex-extra
     
 # We do nothing here.
 dependencies:
