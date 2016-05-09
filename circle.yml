@@ -3,6 +3,13 @@
 ##
 ## https://circleci.com/gh/optimizationBenchmarking/documentation-intro-slides
 #
+machine:
+# Install the newest version of ant.
+  pre:
+# Install the required Ant version
+  - sudo apt-get -q -y -f update
+  - sudo apt-get -q -y -f install texlive-lang-cjk
+    
 # We do nothing here.
 dependencies:
   override:
