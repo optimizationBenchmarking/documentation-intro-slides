@@ -6,8 +6,8 @@
 machine:
 # Install the newest version of ant.
   pre:
-  - sudo apt-get -q -y -f update
-  - sudo apt-get -q -y -f install texlive-full texlive-lang-cjk texlive-xelatex
+  - sudo apt-get -q -y update
+  - sudo apt-get -q -y install texlive-full texlive-lang-cjk texlive-xelatex
     
 # We do nothing here.
 dependencies:
