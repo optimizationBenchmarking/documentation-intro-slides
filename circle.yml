@@ -3,19 +3,7 @@
 ##
 ## https://circleci.com/gh/optimizationBenchmarking/documentation-intro-slides
 #
-machine:
-# Install the newest version of ant.
-  pre:
-# Install the required Ant version
-  - sudo apt-get -q -y -f purge texlive texlive-full texlive-xetex texlive-latex-recommended texlive-latex-base texlive-base texlive-common tex-common lmodern texlive-latex-recommended-doc latex-xcolor latex-beamer prosper texlive-fonts-recommended texlive-base texlive-common texlive-latex-recommended texlive-latex-recommended texlive texlive-xetex
-#  - sudo apt-get -q -y -f autoclean
-#  - sudo apt-get -q -y -f autoremove
-  - sudo apt-get -q -y -f install
-  - sudo dpkg --configure -a
-  - sudo apt-get clean
-  - sudo apt-get -q -y -f update
-  - sudo apt-get -q -y -f install tex-common=2013 lmodern=2013 texlive-latex-recommended-doc=2013 latex-xcolor=2013 latex-beamer=2013 prosper=2013 texlive-fonts-recommended=2013 texlive-base=2013 texlive-common=2013 texlive-latex-recommended=2013 texlive-latex-recommended=2013 texlive=2013 texlive-xetex
-    
+   
 # We do nothing here.
 dependencies:
   override:
