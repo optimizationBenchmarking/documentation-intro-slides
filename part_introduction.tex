@@ -54,3 +54,131 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 \locateGraphic{12}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept}{0.125}{0.54}%
 %
 \end{frame}%
+%
+%
+\begin{frame}[t]%
+\frametitle{Algorithm Analysis and Comparison}%
+\begin{itemize}%
+\item \alert{Which of the algorithms is best (for my problem)?}%
+\item<2-> Traditional Approach {\`{a}} la \emph{\inQuotes{QuickSort is better than Bubble Sort because it needs \bigOOf{n \log n} while Bubble Sort needs \bigOOf{n^2} steps to sort $n$ elements in the average case.}}%
+%
+\item<3-> Complexity Analysis, Theoretical Bounds of Runtime and Solution Quality%
+\item<4-> \alert<-9>{Usually not feasible}\uncover<5->{%
+\begin{itemize}%
+\item analysis extremely complicated\uncover<6->{ since%
+\item<6-> algorithms are usually randomized\uncover<7->{ and%
+\item<7-> have many parameters (e.g., crossover rate, population size)\uncover<8->{ and%
+\item<8-> \inQuotes{sub-algorithms} (e.g., crossover operator, mutation operator, selection algorithm)%
+\item<9-> optimization problems also differ in many aspects%
+\item<10-> theoretical results only available for toy problems and extremely simplified algorithms.%
+\item<11-> \alert<10>{currently, not mature enough to be an easy-to-use tool for practitioners}%
+}}}%
+\end{itemize}%
+}%
+%
+\item<12-> \alert{Experimental analysis and comparison only practical alternative.}%
+%
+\end{itemize}%
+\end{frame}%
+%
+%
+%
+\begin{frame}%
+\frametitle{Performance and Anytime Algorithms}%
+%
+\emph{\inQuotes{We use metaheuristic optimization algorithms to give us \alert<3->{good approximate solutions} within \alert<4->{acceptable runtime}.}}%
+%
+\uncover<2->{%
+\begin{itemize}%
+\item Algorithm performance has two dimensions\scitep{NAFR2010RPBBOB2ES,WCTLTCMY2014BOAAOSFFTTSP}:\uncover<3->{ solution quality\uncover<4->{ and required runtime}}%
+\item<5-> Anytime Algorithms\scitep{BD1989STDPP2} are optimization methods which maintain an approximate solution at \emph{any time} during their run and iteratively improve this guess.%
+\item<6-> All metaheuristics are Anytime Algorithms.%
+\item<7-> Several exact methods like Branch-and-Bound\scitep{LMSK1963AAFTTSP,Z1993TBABACSOTATSP,Z1999TAADFBABACSOTATSP} are Anytime Algorithms.%
+\item<8-> Consequence: Most optimization algorithms produce approximate solutions of different qualities at different points during their process.%
+\item<9-> Experiments must capture solution quality and runtime data.%
+\end{itemize}%
+}%
+%
+\locateGraphic{3}{width=0.55\paperwidth}{graphics/performance/performance_dimensions/performance_dimensions_1}{0.225}{0.542}%
+\locateGraphic{4}{width=0.55\paperwidth}{graphics/performance/performance_dimensions/performance_dimensions_2}{0.225}{0.542}%
+\locateGraphic{5}{width=0.55\paperwidth}{graphics/performance/performance_dimensions/performance_dimensions}{0.225}{0.542}%
+%
+\end{frame}%
+%
+\begin{frame}[t]%
+\frametitle{Experimental Procedure}%
+\begin{itemize}%
+\item In optimization or Machine Learning, the following experimental procedure is often used\uncover<2->{%
+\begin{enumerate}%
+\item Select a \only<3->{\alert<3>{set of }}benchmark instance\only<3->{\alert<3>{s}}\only<3-7>{:%
+\begin{itemize}%
+\item multiple instances%
+\item<4-> which cover some different problem features%
+\item<5-> should be well-known to make results comparable%
+\only<-6>{%
+\item<6-> e.g., TSPLib\scitep{R1991ATSPL,R1995T9,DACO1995TSPLIB} for the TSP has instances with different numbers of cities and geometries%
+}%
+\only<-7>{%
+\item<7-> e.g., BBOB\scitep{HAFR2012RPBBOBES,NAFR2010RPBBOB2ES,HAFR2009RPBBOB2ES,FHRA2013RPBBOB2POTNF} offers different benchmark functions for numerical optimization problems%
+}%
+\end{itemize}%
+}%
+\item<8-> Do experiment\only<12->{\alert<12-13>{s}}\only<9-13>{:%
+\begin{itemize}%
+\item conduct several independent runs of algorithm for each benchmark instance%
+\item<10-> collect algorithm progress information, e.g., as \emph{\inQuotes{runtime bestObjectiveValue}} tuples%
+\item<11-> one log file per run, each log file has several such tuples%
+\item<12-> repeat for different algorithm parameter settings (e.g., different population sizes of an EA)%
+\item<13-> repeat with other algorithms for comparison purposes%
+\end{itemize}%
+}%
+\item<14-> Evaluate the gathered data\only<15->{:\alert<22>{%
+\begin{itemize}%
+\item draw diagrams of progress of solution quality over time%
+\item<16-> draw diagrams of advanced statistical parameters such as ECDF\scitep{HAFR2012RPBBOBES,HS1998ELVAPAR,TH2004UAIAEEFSAFSAMS,WCTLTCMY2014BOAAOSFFTTSP}\only<17->{ and ERT\scitep{HAFR2012RPBBOBES,WCTLTCMY2014BOAAOSFFTTSP}} (over time)%
+\item<18-> use statistical tests to compare results (at different points during the runs)%
+\item<19-> analyze the impact of benchmark features and algorithm parameters on the above%
+\end{itemize}%
+}}%
+%
+\item<20-> Draw conclusions about algorithm performance and parameter settings%
+\item<21-> But this is all \emph{very} cumbersome, involves much work and much data\dots%
+\end{enumerate}%
+}%
+\item<22-> The optimizationBenchmarking framework can automatize much of this work%
+\end{itemize}%
+%
+\locateWithCaption{6}{%
+\includegraphics[width=0.925\paperwidth]{graphics/tspLib_features/tspLib_features_symmetric}%
+}{%
+The relative amounts of the instances of the 110 symmetric instances of TSPLib according to their features (the 10 asymmetric instances are not plotted).%
+}{0.0375}{0.51}{0.925}%
+%
+\locateWithCaption{7}{%
+\includegraphics[width=0.925\paperwidth]{graphics/bbob_features/bbob_features}%
+}{%
+The relative amounts of BBOB benchmark functions according to their features.%
+}{0.0375}{0.51}{0.925}%
+%
+\locateWithCaption{10}{%
+\includegraphics[width=0.8\paperwidth]{graphics/tspSuite_logfile_example/tspSuite_logfile_example}%
+}{%
+Example for data collected in a log file by TSP~Suite\scitep{WCTLTCMY2014BOAAOSFFTTSP,JWLCA2014CAHBABAWECMLSATHOTT}.%
+}{0.0375}{0.53}{0.925}%
+%
+\locateWithCaption{15-17}{
+\strut%
+\includegraphics[width=0.28\paperwidth]{graphics/performance/progress_example/progress_example}%
+\uncover<16->{%
+\strut\hfill\strut%
+\includegraphics[width=0.28\paperwidth]{graphics/performance/ecdf_example/ecdf_example}%
+\uncover<17->{%
+\strut\hfill\strut%
+\includegraphics[width=0.28\paperwidth]{graphics/performance/ert_example/ert_example}%
+}}\strut%
+}{%
+Examples for progress\only<16>{ and ERT}\only<17->{, ERT, and ECDF} diagrams for different algorithms (signified by different colors) over different sub-sets of the TSPLib data.%
+}{0.0375}{0.525}{0.925}%
+%
+\end{frame}%
+
