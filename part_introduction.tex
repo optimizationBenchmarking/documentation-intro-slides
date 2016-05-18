@@ -1,6 +1,22 @@
 %
 \section{Introduction}%
 %
+\begin{frame}%
+\frametitle{Quick Overview}%
+\begin{itemize}%
+\item Many optimization algorithms start with a bad solution and improve it step-by-step.%
+\item<2-> When experimenting with such algorithms, we should collect information about how this improvement takes place over time.%
+\item<3-> We should do this over several algorithm setups on several benchmark instances with different features%
+\item<4-> \alert<-5>{How do we evaluate such data\only<-4>{?}\uncover<5->{ and compare the algorithms/setups)?}}%
+\item<6-> The \emph{OptimizationBenchmarking} Framework can do it for you!%
+\item<7-> It provides a graphical user interface in a client/server application for loading, editing, and evaluating experimental results.%
+\item<8-> It can run as Docker container under Linux, MacOS, and Windows without needed any additional software (except Docker and a browser).% 
+\item<9-> It produces reports, similar to articles, in \LaTeX\ with figures and building blocks ready for use in your publications%
+\end{itemize}%
+\end{frame}%
+%
+\input{part_install.tex}%
+%
 \begin{frame}[t]%
 \frametitle{Optimization}%
 \begin{itemize}%
