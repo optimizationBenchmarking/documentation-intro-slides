@@ -25,11 +25,15 @@ University of Science and Technology of China (USTC), Hefei 230027, Anhui, China
 }%
 %
 %
+\pgfdeclareimage[width=0.2\paperwidth]{logo}{graphics/logo/logo}%
+\pgfdeclareimage[width=0.33\paperwidth]{website}{graphics/website/website}%
 %
 \begin{document}%
 %
 %
-\startPresentation{}%
+\startPresentation{%
+\locate{}{\pgfuseimage{logo}}{0.725}{0.6}%
+}%
 %
 \printSectionOutlines%
 %
