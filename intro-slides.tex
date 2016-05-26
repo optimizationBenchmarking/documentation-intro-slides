@@ -8,7 +8,7 @@
 OptimizationBenchmarking: Intro%
 ]{%
 \mbox{OptimizationBenchmarking}\\%
-\mbox{Introduction}%
+\mbox{An Introduction}%
 }%
 %
 %
@@ -25,17 +25,22 @@ University of Science and Technology of China (USTC), Hefei 230027, Anhui, China
 }%
 %
 %
-\pgfdeclareimage[width=0.2\paperwidth]{logo}{graphics/logo/logo}%
-\pgfdeclareimage[width=0.33\paperwidth]{website}{graphics/website/website}%
-%
 \begin{document}%
 %
 %
 \startPresentation{%
-\locate{}{\pgfuseimage{logo}}{0.725}{0.6}%
+\locate{}{%
+\includegraphics[width=0.26\paperwidth]{graphics/barcodes/website}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{website}}}%
+\bigskip\\%
+\includegraphics[width=0.26\paperwidth]{graphics/barcodes/slides}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{slides}}}%
+}{0.625}{0.16}%
 }%
 %
-\printSectionOutlines%
+\printSectionOutlines{\locate{}{%
+\includegraphics[width=0.26\paperwidth]{graphics/barcodes/website}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{website}}}%
+\bigskip\\%
+\includegraphics[width=0.26\paperwidth]{graphics/barcodes/slides}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{slides}}}%
+}{0.625}{0.16}}%
 %
 \begin{frame}%
 \frametitle{Overview}%
@@ -52,6 +57,11 @@ University of Science and Technology of China (USTC), Hefei 230027, Anhui, China
 \input{part_maxSatExample.tex}%
 \input{part_conclusions.tex}%
 %
-\endPresentation%%
+\endPresentation%
+%
+\appendices%
+%
+\input{appendix_maxSatExample.tex}%
+%
 \end{document}%%
 \endinput%

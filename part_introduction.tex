@@ -15,7 +15,6 @@
 \end{itemize}%
 \end{frame}%
 %
-\input{part_install.tex}%
 %
 \begin{frame}[t]%
 \frametitle{Optimization}%
@@ -76,23 +75,20 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 \frametitle{Algorithm Analysis and Comparison}%
 \begin{itemize}%
 \item \alert{Which of the algorithms is best (for my problem)?}%
-\item<2-> Traditional Approach {\`{a}} la \emph{\inQuotes{QuickSort is better than Bubble Sort because it needs \bigOOf{n \log n} while Bubble Sort needs \bigOOf{n^2} steps to sort $n$ elements in the average case.}}%
-%
-\item<3-> Complexity Analysis, Theoretical Bounds of Runtime and Solution Quality%
-\item<4-> \alert<-9>{Usually not feasible}\uncover<5->{%
+\item<2-> Traditional Approach: Complexity Analysis, Theoretical Bounds of Runtime and Solution Quality%
+\item<3-> \alert<-9>{Usually not feasible}\uncover<4->{%
 \begin{itemize}%
-\item analysis extremely complicated\uncover<6->{ since%
-\item<6-> algorithms are usually randomized\uncover<7->{ and%
-\item<7-> have many parameters (e.g., crossover rate, population size)\uncover<8->{ and%
-\item<8-> \inQuotes{sub-algorithms} (e.g., crossover operator, mutation operator, selection algorithm)%
-\item<9-> optimization problems also differ in many aspects%
-\item<10-> theoretical results only available for toy problems and extremely simplified algorithms\scitep{WWCTL2016GVLSTIOPSOEAP}.%
-\item<11-> \alert<10>{currently, not mature enough to be an easy-to-use tool for practitioners}%
+\item analysis extremely complicated\uncover<5->{ since%
+\item<5-> algorithms are usually randomized\uncover<6->{ and%
+\item<6-> have many parameters (e.g., crossover rate, population size)\uncover<7->{ and%
+\item<7-> \inQuotes{sub-algorithms} (e.g., crossover operator, mutation operator, selection algorithm)%
+\item<8-> optimization problems also differ in many aspects%
+\item<9-> theoretical results only available for toy problems and extremely simplified algorithms\scitep{WWCTL2016GVLSTIOPSOEAP}.%
 }}}%
 \end{itemize}%
 }%
 %
-\item<12-> \alert{Experimental analysis and comparison only practical alternative.}%
+\item<10-> \alert{Experimental analysis and comparison only practical alternative.}%
 %
 \end{itemize}%
 \end{frame}%
