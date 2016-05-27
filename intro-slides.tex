@@ -28,13 +28,15 @@ University of Science and Technology of China (USTC), Hefei 230027, Anhui, China
 \begin{document}%
 %
 %
-\startPresentation{%
+\protected\gdef\barcodes{%
 \locate{}{%
 \includegraphics[width=0.26\paperwidth]{graphics/barcodes/website}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{website}}}%
 \bigskip\\%
 \includegraphics[width=0.26\paperwidth]{graphics/barcodes/slides}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{slides}}}%
 }{0.625}{0.16}%
 }%
+%
+\startPresentation{\barcodes}%
 %
 \printSectionOutlines%
 %
@@ -48,7 +50,7 @@ University of Science and Technology of China (USTC), Hefei 230027, Anhui, China
 %
 \endPresentation%
 %
-\appendices%
+\appendices{\barcodes}%
 %
 \input{appendix_maxSatExample.tex}%
 %

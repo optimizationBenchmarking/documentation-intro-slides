@@ -1,5 +1,5 @@
 %
-\subsection*{\maxSat\ Example: Details}%
+\subsection{\maxSat\ Example: Details}%
 \pdfbookmark[2]{\maxSat\ Example: Details}{maxSatExampleDetails}%
 %
 %%
@@ -11,12 +11,14 @@
 %%
 \begin{frame}[label=maxSatDemoStart]%
 \frametitle{\maxSat: Output and Analysis}%
-\begin{itemize}%
+\centering{\LARGE{\textbf{\alert{\maxSat: Output and Analysis}}}}%
+\bigskip\begin{itemize}%
 \item Here we discuss the details of the \maxSat\ example%
 \item The following slides can replace the demo, if for some reason running the demo is not possible or did not work out\dots%
 \item The evaluation aspects are part of this example.%
 \end{itemize}%
-\centering\hyperlink{maxSatInteractiveDemoStart}{\beamergotobutton{go back to interactive demo slides}}%
+\bigskip%
+\centering\scalebox{1.8}{\hyperlink{maxSatInteractiveDemoStart}{\beamergotobutton{go back to interactive demo slides}}}%
 \end{frame}%
 %%
 %
@@ -334,7 +336,11 @@ The ECDF in over all 100 benchmark instances (log-scaled, \alert{optimized for \
 \item The Evaluator will now produce report documents containing the requested information (and figures)%
 \end{itemize}%
 }%
-\only<6->{\centering\hyperlink{maxSatInteractiveDemoEnd}{\beamergotobutton{continue after end of interactive demo slides}}}%
+\locate{6}{%
+\parbox{\paperwidth}{%
+\centering\scalebox{1.8}{\hyperlink{maxSatInteractiveDemoEnd}{\beamergotobutton{continue after end of interactive demo slides}}}%
+}%
+}{0}{0.16}%
 %
 \locateWithCaption{2-}{%
 \strut\vbox to 0.475\paperheight{\vfil\fbox{%
