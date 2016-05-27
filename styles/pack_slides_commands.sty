@@ -151,8 +151,6 @@
 \gdef\appendices{%
 \pdfbookmark[1]{Appendices}{appendices}%
 \section*{Appendices}%
-\global\let\section\subsection%
-%\global\let\@framePatch\@framePatch@doNothing%
 }%
 %
 %
@@ -168,12 +166,11 @@
 {\message{** patching of \string\beamer@@frametitle failed **}}%
 %
 %
-\gdef\printSectionOutlines#1{%
+\gdef\printSectionOutlines{%
 \AtBeginSection[]{%
 \begin{frame}%
 \frametitle{Section Outline}%
 \tableofcontents[currentsection]%
-#1%
 \end{frame}%
 }%
 }%
