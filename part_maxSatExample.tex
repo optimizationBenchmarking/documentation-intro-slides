@@ -30,11 +30,11 @@
 \item<6-> \maxSat\uncover<7->{%
 \begin{itemize}%
 \item SAT turned into an optimization problem\scitep{HS2005SLSFAA}%
-\item<7-> candidate solution: bit string of length \maxSatVariables\ holding the value of each variable%
-\item<8-> make as many clauses become \texttt{true} as possible%
-\item<9-> minimize objective function $\objectiveFunctionb{\vec{x}} = \textnormal{number of clauses which are \texttt{false}}$%
-\item<10-> $\objectiveFunctionb{\vec{x}}=0$ $\Longrightarrow$ all clauses are \texttt{true}, SAT problem solved%
-\item<11-> $\objectiveFunctionb{\vec{x}}=\maxSatClauses$ $\Longrightarrow$ all clauses are \texttt{false}%
+\item<8-> candidate solution: bit string of length \maxSatVariables\ holding the value of each variable%
+\item<9-> make as many clauses become \texttt{true} as possible%
+\item<10-> minimize objective function $\objectiveFunctionb{\vec{x}} = \textnormal{number of clauses which are \texttt{false}}$%
+\item<11-> $\objectiveFunctionb{\vec{x}}=0$ $\Longrightarrow$ all clauses are \texttt{true}, SAT problem solved%
+\item<12-> $\objectiveFunctionb{\vec{x}}=\maxSatClauses$ $\Longrightarrow$ all clauses are \texttt{false}%
 \end{itemize}%
 }%
 %
@@ -297,15 +297,15 @@
 %}%
 %
 %\only<4-5>{%
-\item<4-> We specify which dimensions we have measured\uncover<5->{: \measureFEs, \measureRuntime, and \measureObjectiveValue\ in our example}%
+\item<4-> We specify which dimensions we have measured\uncover<5->{: \measureFEs, \measureRuntime, and \measureObjectiveValue\ in our example\uncover<-5>{ (\alert{demo})}}%
 %}%
 %
 %\only<6-7>{%
-\item<6-> We specify which benchmark instances we have and what their features are\uncover<7->{: $11\times 11$ instances in our example, with features \maxSatVariables\ and \maxSatClauses}%
+\item<6-> We specify which benchmark instances we have and what their features are\uncover<7->{: $11\times 11$ instances in our example, with features \maxSatVariables\ and \maxSatClauses\uncover<-7>{ (\alert{demo})}}%
 %}%
 %
 %\only<8-9>{%
-\item<8-> For each experiment, we specify the parameters\uncover<9->{: in our example, these are \texttt{algorithm}, \texttt{operator}, \texttt{restart}}%
+\item<8-> For each experiment, we specify the parameters\uncover<9->{: in our example, these are \texttt{algorithm}, \texttt{operator}, \texttt{restart}\uncover<-9>{ (\alert{demo})}}%
 }%
 %
 \only<10-13>{%
