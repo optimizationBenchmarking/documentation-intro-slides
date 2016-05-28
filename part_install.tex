@@ -15,7 +15,7 @@
 \item software requirements: Java~7~JDK\scitep{JAVA2PSESAS}, TeX~Live\scitep{TEXLIVE}, \codeil{R}\scitep{WU2006TRPFSC} with several packages%
 \item download software from web page%
 \item \mbox{\codeil{java -jar evaluatorGui.jar}}%
-\item open browser to \codeil{localhost}%
+\item open browser to \codeil{http://localhost:8080}%
 \end{itemize}%
 %
 \uncover<2->{%
@@ -24,8 +24,8 @@
 \item \alert{Application Dockerized for you!}%
 \begin{itemize}%
 \item install Docker from\\\url{http://www.docker.com/} and do%
-\item \mbox{\codeil{docker run -t -i -p 80:8080/tcp}} \mbox{\codeil{optimizationbenchmarking/evaluator-gui}}%
-\item open browser to \codeil{localhost}%
+\item \mbox{\codeil{docker run -t -i -p 9999:8080/tcp}} \mbox{\codeil{optimizationbenchmarking/evaluator-gui}}%
+\item open browser to \codeil{http://localhost:9999}%
 \end{itemize}%
 %
 \vfill%
