@@ -1,4 +1,4 @@
-optimizationBenchmarking.org: An Introduction
+# optimizationBenchmarking.org: An Introduction
 
 Optimization algorithms have become a standard tool in many
 application areas such as management, logistics, engineering, design,
