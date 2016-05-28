@@ -10,11 +10,9 @@ reducing the algorithm runtime and increasing the result quality. For
 such research to succeed and publications to have true impact on the
 real world, we need to be able to
 
-  - analyze the performance of an algorithm, to
-  
+  - analyze the performance of an algorithm, to  
   - analyze the influence of different features of an optimization
-    problem on its hardness, and to
-  
+    problem on its hardness, and to  
   - compare the performance of different algorithms in a fair and
     sound fashion.
 
