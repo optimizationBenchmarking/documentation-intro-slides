@@ -5,12 +5,15 @@
 \frametitle{Quick Overview}%
 \begin{itemize}%
 \item Concept of optimization algorithms% 
-\item<2-> How to benchmark optimization algorithms%
-\item<3-> How to evaluate data obtained from benchmarking and how to compare algorithms
-\item<4-> The \optimizationBenchmarking\ Framework can do it for you\only<-4>{!}\only<5->{:}%
-\item<5-> It provides a graphical user interface in a client/server application for loading, editing, and evaluating experimental results.%
-\item<6-> It can run as Docker container under Linux, MacOS, and Windows without needing any additional software (except Docker and a browser).% 
+\item<2-> How to \alert<4>{benchmark} optimization algorithms%
+\item<3-> How to \alert<4>{evaluate data} obtained from benchmarking and how to compare algorithms
+\item<4-> \alert<4>{The \optimizationBenchmarking\ Framework can help with this\only<-4>{!}}\uncover<5->{:%
+\begin{itemize}%
+\item It provides a graphical user interface for loading, adding meta-data (algorithm setup\dots) to, and evaluating experimental results.%
+\item<6-> It can run as Docker container under Linux, MacOS, and Windows without needing \emph{any} additional software (except Docker and a browser).% 
 \item<7-> It produces reports, similar to articles, in \LaTeX\ with figures and building blocks ready for use in your publications%
+\end{itemize}%
+}%
 \end{itemize}%
 \end{frame}%
 %
@@ -55,43 +58,20 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 \item<25-> \alert<25>{How can I make a good algorithm better (for my problem)?}%
 %
 \end{itemize}%
+~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\%
 %
 \locateGraphic{2}{width=0.6\paperwidth}{graphics/problem_examples/tsp/tsp}{0.2}{0.29}%
 \locateGraphic{3}{width=0.875\paperwidth}{graphics/problem_examples/bin_packing/bin_packing}{0.0625}{0.495}%
 \locateGraphic{4}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.5}%
 \locateGraphic{5}{width=0.85\paperwidth}{graphics/problem_examples/qap/qap}{0.075}{0.625}%
-\locateGraphic{7-8}{width=0.65\paperwidth}{graphics/exponential_functions/exponential_functions}{0.175}{0.6}%
+\locateGraphic{7-8}{width=0.75\paperwidth}{graphics/exponential_functions/exponential_functions}{0.1625}{0.55}%
 %
-\locateGraphic{9}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_1}{0.125}{0.54}%
-\locateGraphic{10}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_2}{0.125}{0.54}%
-\locateGraphic{11}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_3}{0.125}{0.54}%
-\locateGraphic{12}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept}{0.125}{0.54}%
+\locateGraphic{9}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_1}{0.125}{0.53}%
+\locateGraphic{10}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_2}{0.125}{0.53}%
+\locateGraphic{11}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_3}{0.125}{0.53}%
+\locateGraphic{12}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept}{0.125}{0.53}%
 %
 \end{frame}%
-%
-%
-\begin{frame}[t]%
-\frametitle{Algorithm Analysis and Comparison}%
-\begin{itemize}%
-\item \alert{Which of the algorithms is best (for my problem)?}%
-\item<2-> Traditional Approach: Complexity Analysis, Theoretical Bounds of Runtime and Solution Quality%
-\item<3-> \alert<-9>{Usually not feasible}\uncover<4->{%
-\begin{itemize}%
-\item analysis extremely complicated\uncover<5->{ since%
-\item<5-> algorithms are usually randomized\uncover<6->{ and%
-\item<6-> have many parameters (e.g., crossover rate, population size)\uncover<7->{ and%
-\item<7-> \inQuotes{sub-algorithms} (e.g., crossover operator, mutation operator, selection algorithm)%
-\item<8-> optimization problems also differ in many aspects%
-\item<9-> theoretical results only available for toy problems and extremely simplified algorithms\scitep{WWCTL2016GVLSTIOPSOEAP}.%
-}}}%
-\end{itemize}%
-}%
-%
-\item<10-> \alert{Experimental analysis and comparison is the only practical alternative.}%
-%
-\end{itemize}%
-\end{frame}%
-%
 %
 %
 \begin{frame}[t]%
