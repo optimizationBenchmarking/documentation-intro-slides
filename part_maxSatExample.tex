@@ -14,9 +14,8 @@
 \gdef\maxSatVariablei#1{\ensuremath{\maxSatVariable_{#1}}}%
 \gdef\maxSatFormula{\ensuremath{B}}%
 %%
-\begin{frame}%
+\begin{frame}[t]%
 \frametitle{\maxSat}%
-~\\%
 \begin{itemize}%
 \item Satisfiability Problems (SAT)\uncover<2->{:%
 \begin{itemize}
@@ -39,6 +38,9 @@
 }%
 %
 \end{itemize}%
+%
+\locateGraphic{-5}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.54}%
+%
 \end{frame}%
 %
 \begin{frame}[t]%
@@ -83,34 +85,12 @@
 }%
 \item<3-> We pick the first ten instances from each set, i.e., test 100 instances in total%
 \item<4-> All instances are satisfiable%
-\item<5-> The problem instances have the following features\uncover<6->{:%
-\begin{itemize}%
-\item \maxSatVariables: the number of variables%
-\item<7-> \maxSatClauses: the number of clauses (here related to \maxSatVariables)%
-\end{itemize}%
-}%
-\end{itemize}%
-\end{frame}%
-%
-%
-\begin{frame}%
-\frametitle{Experiments}%
-\begin{itemize}%
-\item Now we want to do the experiments.%
-\item<2-> What data shall we collect?\uncover<3->{%
-\begin{enumerate}%
-\item Data should allow us to reproduce algorithm progress over time%
-\item<4-> We can collect one data point whenever the algorithm makes an improvement in terms of \objectiveFunction\uncover<5->{ (and one at the end of run)}%
-\item<6-> $\maxSatClauses+1$ possible objective values $\Longrightarrow$ at most $\maxSatClauses+2$ log points%
-\item<7-> In each log point we record\uncover<8->{%
-\begin{itemize}%
-\item the number of function evaluations (\measureFEs) performed%
-\item<9-> the elapsed runtime \measureRuntime\ (in \nano\second)%
-\item<10-> the best objective value \measureObjectiveValue\ achieved so far%
-\end{itemize}%
-}%
-\end{enumerate}%
-}%
+%\item<5-> The problem instances have the following features\uncover<6->{:%
+%\begin{itemize}%
+%\item \maxSatVariables: the number of variables%
+%\item<7-> \maxSatClauses: the number of clauses (here related to \maxSatVariables)%
+%\end{itemize}%
+%}%
 \end{itemize}%
 \end{frame}%
 %
@@ -119,10 +99,11 @@
 \frametitle{Example of Log File}%
 %
 \begin{itemize}%
-\item Example log file obtained from applying the 2-flip Hill Climber with Restarts to the 2\textsuperscript{nd} benchmark instance of set \texttt{uf075}.%
+\only<-1>{\item Now we do experiments and collect data.}%
+\item<2-> Example log file obtained from applying the 2-flip Hill Climber with Restarts to the 2\textsuperscript{nd} benchmark instance of set \texttt{uf075}.%
 \end{itemize}%
 %
-\begin{locateBox}{0.25}{0.235}
+\begin{locateBox}[2-]{0.25}{0.235}
 \begin{listingBlock}[0.65]{Log File \texttt{uf075-02\_2FlipHCrs\_01.txt}.}
 \centering
 \begin{scaledBox}{!}{0.3\paperheight}
@@ -131,7 +112,7 @@
 \end{listingBlock}
 \end{locateBox}
 %
-\begin{locateBox}[2-]{0}{0}
+\begin{locateBox}[3-]{0}{0}
 \begin{pgfpicture}%
 \pgfpathrectangle{\pgfpoint{0pt}{0pt}}{\pgfpoint{\paperwidth}{\paperheight}}%
 \pgfusepath{use as bounding box,clip}%
@@ -146,7 +127,7 @@
 \pgfpathrectangle{\pgfpoint{0.32\paperwidth}{0.51\paperheight}}{\pgfpoint{0.52\paperwidth}{0.03\paperheight}}%
 \pgfusepath{stroke}%
 %
-\uncover<3->{%
+\uncover<4->{%
 %
 \pgfsetcolor{red}%
 \pgftext[right,bottom,at=\pgfpoint{0.2\paperwidth}{0.45\paperheight}]{ellapsed \measureFEs}%
@@ -158,7 +139,7 @@
 \pgfpathrectangle{\pgfpoint{0.36\paperwidth}{0.085\paperheight}}{\pgfpoint{0.1\paperwidth}{0.585\paperheight}}%
 \pgfusepath{stroke}%
 %
-\uncover<4->{%
+\uncover<5->{%
 \pgfsetcolor{green}%
 \pgftext[right,bottom,at=\pgfpoint{0.2\paperwidth}{0.35\paperheight}]{runtime [\nano\second]}%
 \pgfsetlinewidth{1pt}%
@@ -169,7 +150,7 @@
 \pgfpathrectangle{\pgfpoint{0.56\paperwidth}{0.085\paperheight}}{\pgfpoint{0.11\paperwidth}{0.585\paperheight}}%
 \pgfusepath{stroke}%
 %
-\uncover<5->{%
+\uncover<6->{%
 \pgfsetcolor{violet}%
 \pgftext[right,bottom,at=\pgfpoint{0.2\paperwidth}{0.25\paperheight}]{\measureObjectiveValue: best \objectiveFunctionb{\vec{x}}}%
 \pgfsetlinewidth{1pt}%
