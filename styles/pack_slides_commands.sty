@@ -149,6 +149,16 @@
 \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/show/hide]%
 #1%
 \end{frame}%
+%
+\global\newcount\@appendix@hrefids%
+\global\@appendix@hrefids 0\relax%
+%
+\gdef\appendix##1{%
+\global\advance \@appendix@hrefids 1\relax%
+\expandafter\pdfbookmark\expandafter[\expandafter2\expandafter]\expandafter{##1}{appendix\the\@appendix@hrefids}%
+\subsection{##1}%
+}%
+%
 }%
 %
 %
@@ -164,11 +174,12 @@
 {\message{** patching of \string\beamer@@frametitle failed **}}%
 %
 %
-\gdef\printSectionOutlines{%
+\gdef\printSectionOutlines#1{%
 \AtBeginSection[]{%
 \begin{frame}%
 \frametitle{Section Outline}%
 \tableofcontents[currentsection,subsectionstyle=show/show/hide]%
+#1%
 \end{frame}%
 }%
 }%
