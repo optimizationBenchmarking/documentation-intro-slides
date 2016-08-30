@@ -1,0 +1,18 @@
+# optimizationBenchmarking.org: Eine Einführung
+
+Optimierungsalgorithmen haben sich in den letzten Jahrzehnten zu einem Standardwerkzeug in vielen Anwendungsgebieten entwickelt. Prominente Beispiele sind Management, Logistik, Maschinenbau, Design, Chemie und Medizin. Nach kurzer Rechenzeit können sie näherungsweise optimale Lösungen für komplexe Probleme liefern. Die Forschung auf dem Gebiet der Optimierung hat die widersprüchlichen Ziele, sowohl die Geschwindigkeit als auch die Lösungsqualität der Algorithmen zu erhöhen. Damit solche Forschung erfolgreich sein kann, müssen wir in der Lage sein
+
+- die Performanz eines Algorithmus zu analysieren,
+- den Einfluss der verschiedenen Eigenschaften eines Optimierungsproblems auf seine Schwere zu verstehen, und
+- die Performanz von verschiedenen Algorithmen auf eine Faire und statistisch vernünftige Weise zu vergleichen.
+
+Dies ist schwieriger, als man erwarten würde. Optimierungsverfahren verbessern ihre Näherungslösungen schrittweise, so dass keine Endergebnisse im eigentlichen Sinne existieren und das komplette Laufzeitverhalten verglichen werden muss. Weiterhin sind viele Verfahren [zufallsbasiert](https://de.wikipedia.org/wiki/Randomisierter_Algorithmus) und können bei jeder Ausführung bei gleicher Eingabe andere Lösungen generieren. Durch diese Faktoren wird eine gründliche Analyse dieser Algorithmen erschwert.
+
+Unsere Software kann diese Arbeit erleichtern und hat nahezu keine Anforderungen an die Art der zu analysierenden Algorithmen und Probleme. Sie erstellt Performanzberichte sowohl in [LaTeX](https://de.wikipedia.org/wiki/LaTeX) als auch [XHTML](https://de.wikipedia.org/wiki/Extensible_Hypertext_Markup_Language). Verschiedene Arten von Diagrammen und Datengruppierungen können frei konfiguriert werden, um ein besseres Verständnis der Algorithmenverhaltens zu ermöglichen. Wir demonstrieren die Funktionsweise der Software anhand eines Beispielexperiments, in dem sechs primitive [Heuristiken](https://de.wikipedia.org/wiki/Heuristik) für ein [Erfüllbarkeitsproblem](https://de.wikipedia.org/wiki/Erf%C3%BCllbarkeitsproblem_der_Aussagenlogik), das [Maximum Satisfiability Problem](https://en.wikipedia.org/wiki/Maximum_satisfiability_problem) (MAX-SAT) untersucht werden.
+
+Mehr Informationen können auf http://optimizationbenchmarking.github.io/ gefunden werden.
+
+## Literatur
+
+* Thomas Weise, Raymond Chiong, Ke Tang, Jörg Lässig, Shigeyoshi Tsutsui, Wenxiang Chen, Zbigniew Michalewicz, and Xin Yao. Benchmarking Optimization Algorithms: An Open Source Framework for the Traveling Salesman Problem. <em>IEEE Computational Intelligence Magazine (CIM)</em>, 9(3):40-52, August&nbsp;2014. Featured article and selected paper at the website of the IEEE Computational Intelligence Society (<a href="http://cis.ieee.org/">http://cis.ieee.org/</a>).<br><a href="http://www.it-weise.de/research/publications/WCTLTCMY2014BOAAOSFFTTSP/index.html">details</a> / doi:<a href="http://dx.doi.org/10.1109/MCI.2014.2326101">10.1109/MCI.2014.2326101</a> / <a href="http://www.it-weise.de/research/publications/WCTLTCMY2014BOAAOSFFTTSP/WCTLTCMY2014BOAAOSFFTTSP.pdf">pdf</a>
+* Thomas Weise, Yuezhong Wu, Raymond Chiong, Ke Tang, and Jörg Lässig. Global versus Local Search: The Impact of Population Sizes on Evolutionary Algorithm Performance. <em>Journal of Global Optimization</em>. accepted 12&nbsp;February, 2016, published first online: 23&nbsp;February, 2016.<br><a href="http://www.it-weise.de/research/publications/WWCTL2016GVLSTIOPSOEAP/index.html">details</a> / doi:<a href="http://dx.doi.org/10.1007/s10898-016-0417-5">10.1007/s10898-016-0417-5</a> / <a href="http://www.it-weise.de/research/publications/WWCTL2016GVLSTIOPSOEAP/WWCTL2016GVLSTIOPSOEAP.pdf">pdf</a>
