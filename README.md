@@ -9,7 +9,7 @@ A set of introduction slides for the optimization benchmarking project.
 * [presenter bio](https://github.com/optimizationBenchmarking/documentation-intro-slides/blob/master/meta/shortBio.md)
 * German abstract / [deutsche Zusammenfassung](https://github.com/optimizationBenchmarking/documentation-intro-slides/blob/master/meta/abstract_de.md)
 * short German abstract / [kurze deutsche Zusammenfassung](https://github.com/optimizationBenchmarking/documentation-intro-slides/blob/master/meta/abstract_short_de.md)
-* German presenter bio / [Deutsche Kurzbiografie](https://github.com/optimizationBenchmarking/documentation-intro-slides/blob/master/meta/shortBio_de.md)
+* German presenter bio / [deutsche Kurzbiografie](https://github.com/optimizationBenchmarking/documentation-intro-slides/blob/master/meta/shortBio_de.md)
 
 The most recent build result of this slide set is [this pdf](https://circleci.com/api/v1/project/optimizationBenchmarking/documentation-intro-slides/latest/artifacts/0/$CIRCLE_ARTIFACTS/intro-slides.pdf?branch=master).
 
