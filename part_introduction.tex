@@ -102,80 +102,77 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 %
 \end{frame}%
 %
+%
 \begin{frame}[t]%
-\frametitle{Experimental Procedure}%
+\frametitle{Experimentation Procedure}%
 \begin{itemize}%
-\item In optimization or Machine Learning, the following experimental procedure is often used\uncover<2->{%
+\item The following experimentation procedure is suitable for optimization and Machine Learning\uncover<2->{:%
 \begin{enumerate}%
-\item Select a \only<3->{\alert<3>{set of }}benchmark instance\only<3->{\alert<3>{s}}\only<3-7>{:%
+\item Select a set of (well-known) benchmark instances which covers some \textcolor<18>{red}{different problem features}\only<-11>{ \alert{(done)}}\only<3-4>{:%
 \begin{itemize}%
-\item multiple instances%
-\item<4-> which cover some different problem features%
-\item<5-> should be well-known to make results comparable%
-\only<-6>{%
-\item<6-> e.g., \tspLib\expandafter\scitep{\tspLibReferences} for the TSP has instances with different numbers of cities and geometries%
+%
+\only<-3>{%
+\item<3-> e.g., \tspLib\expandafter\scitep{\tspLibReferences} for the TSP has instances with different numbers of cities and geometries%
 }%
-\only<-7>{%
-\item<7-> e.g., \bbob\expandafter\scitep{\bbobReferences} offers different benchmark functions for numerical optimization problems%
+\only<-4>{%
+\item<4-> e.g., \bbob\expandafter\scitep{\bbobReferences} offers different benchmark functions for numerical optimization problems%
 }%
+%
 \end{itemize}%
 }%
-\item<8-> Do experiment\only<12->{\alert<12-13>{s}}\only<9-13>{:%
+\item<5-> Do experiments\only<11->{ with \textcolor<18>{red}{different algorithms/setups}\only<-11>{ \alert{(done)}}}\only<6-10>{:%
 \begin{itemize}%
 \item several independent runs of algorithm for each benchmark instance%
-\item<10-> collect algorithm progress information, e.g., as \emph{\inQuotes{(runtime, best-objective-value-so-far)}} tuples%
-\item<11-> one log file per run, each log file has several such tuples%
-\item<12-> repeat for different algorithm parameter settings (e.g., different population sizes of an EA)%
-\item<13-> repeat with other algorithms for comparison purposes%
+\item<7-> collect algorithm progress information, e.g., as \emph{\inQuotes{(runtime, best-objective-value-so-far)}} tuples%
+\item<8-> one log file per run, each log file has several such tuples%
+\item<9-> repeat for different algorithm parameter settings (e.g., different population sizes of an EA)%
+\item<10-> repeat with other algorithms for comparison purposes%
 \end{itemize}%
 }%
-\item<14-> Evaluate the gathered data\only<15->{:\alert<22>{%
+\item<12-> Evaluate the gathered data\only<13->{, e.g.:%
 \begin{itemize}%
-\item draw diagrams of progress of solution quality over time%
-\item<16-> draw diagrams of advanced statistical parameters such as ECDF\scitep{HAFR2012RPBBOBES,HS1998ELVAPAR,TH2004UAIAEEFSAFSAMS,WCTLTCMY2014BOAAOSFFTTSP}\only<17->{ and ERT\scitep{HAFR2012RPBBOBES,WCTLTCMY2014BOAAOSFFTTSP}} (over time)%
-\item<18-> use statistical tests to compare results (at different points during the runs)%
-\item<19-> analyze the impact of benchmark features and algorithm parameters on the above%
+\item \textcolor<17>{green}{draw diagrams of progress of solution quality over time}%
+\item<14-> \textcolor<17>{green}{draw diagrams of advanced statistical parameters such as ECDF\scitep{HAFR2012RPBBOBES,HS1998ELVAPAR,TH2004UAIAEEFSAFSAMS,WCTLTCMY2014BOAAOSFFTTSP}\only<15->{ and ERT\scitep{HAFR2012RPBBOBES,WCTLTCMY2014BOAAOSFFTTSP}} (over time)}%
 \end{itemize}%
-}}%
+}%
 %
-\item<20-> Draw conclusions about algorithm performance and parameter settings%
-\item<21-> But this is all \emph{very} cumbersome, involves much work and much data\dots%
+\item<16-> But doing this is cumbersome\dots%
 \end{enumerate}%
 }%
-\item<22-> \alert{The \optimizationBenchmarking\ framework can automatize much of the evaluation procedure}%
+\item<17-> The \optimizationBenchmarking\ framework \textcolor<17>{green}{can automatize} much of the evaluation procedure\uncover<18>{\dots}%
+\item<18-> {\dots}and make use of \textcolor<18>{red}{meta-data} about experiments to group and aggregate information.% 
 \end{itemize}%
 %
-\locateWithCaption{6}{%
+\locateWithCaption{3}{%
 \includegraphics[width=0.925\paperwidth]{graphics/tspLib_features/tspLib_features_symmetric}%
 }{%
 The relative amounts of the instances of the 110 symmetric instances of \tspLib\expandafter\scitep{\tspLibReferences} according to their features (the 10 asymmetric instances are not plotted).%
 }{0.0375}{0.51}{0.925}%
 %
-\locateWithCaption{7}{%
+\locateWithCaption{4}{%
 \includegraphics[width=0.925\paperwidth]{graphics/bbob_features/bbob_features}%
 }{%
 The relative amounts of \bbob\expandafter\scitep{\bbobReferences} benchmark functions according to their features.%
 }{0.0375}{0.51}{0.925}%
 %
-\locateWithCaption{10}{%
+\locateWithCaption{7-8}{%
 \includegraphics[width=0.8\paperwidth]{graphics/tspSuite_logfile_example/tspSuite_logfile_example}%
 }{%
 Example for data collected in a log file by \tspSuite\expandafter\scitep{\tspSuiteReferences}.%
 }{0.0375}{0.53}{0.925}%
 %
-\locateWithCaption{15-17}{
+\locateWithCaption{13-15}{
 \strut%
 \includegraphics[width=0.28\paperwidth]{graphics/performance/progress_example/progress_example}%
-\uncover<16->{%
+\uncover<14->{%
 \strut\hfill\strut%
 \includegraphics[width=0.28\paperwidth]{graphics/performance/ecdf_example/ecdf_example}%
-\uncover<17->{%
+\uncover<15->{%
 \strut\hfill\strut%
 \includegraphics[width=0.28\paperwidth]{graphics/performance/ert_example/ert_example}%
 }}\strut%
 }{%
-Examples for progress\only<16>{ and ECDF}\only<17->{, ERT, and ECDF} diagrams from \tspSuite\expandafter\scitep{\tspSuiteReferences} for different algorithms (signified by different colors) over different sub-sets of the \tspLib\expandafter\scitep{\tspLibReferences} data.%
+Examples for progress\only<14->{ and ECDF}\only<15->{, ERT, and ECDF} diagrams from \tspSuite\expandafter\scitep{\tspSuiteReferences} for different algorithms (signified by different colors) over different sub-sets of the \tspLib\expandafter\scitep{\tspLibReferences} data.%
 }{0.0375}{0.545}{0.925}%
 %
 \end{frame}%
-

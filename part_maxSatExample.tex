@@ -5,93 +5,51 @@
 \def\tFlip{\ensuremath{2}-flip}%
 \def\mFlip{\ensuremath{m}-flip}%
 %
-\section{Example: \maxSat}%
-%
-%%
-\gdef\maxSatClauses{\textcolor{red}{\ensuremath{k}}}%
+\gdef\maxSatClauses{\textcolor{blue}{\ensuremath{k}}}%
 \gdef\maxSatVariables{\textcolor{green}{\ensuremath{n}}}%
 \gdef\maxSatVariable{\ensuremath{x}}%
 \gdef\maxSatVariablei#1{\ensuremath{\maxSatVariable_{#1}}}%
 \gdef\maxSatFormula{\ensuremath{B}}%
+%
+\section{Example: \maxSat}%
+%
 %%
 \begin{frame}[t]%
 \frametitle{\maxSat}%
 \begin{itemize}%
-\item Satisfiability Problems (SAT)\uncover<2->{:%
+\item \only<8->{Maximum }Satisfiability Problems (SAT)\only<-7>{\scitep{HS2000SAORFROS}}\only<8->{\scitep{HS2005SLSFAA}}\uncover<2->{:%
 \begin{itemize}
-\item The satisfiability problem (SAT) is one of the most prominent problems in artificial intelligence, logic, theoretical computer science, and various application areas.\scitep{HS2000SAORFROS}%
-\item<3-> Given: formula \maxSatFormula\ in Boolean logic consisting of \maxSatVariables\ Boolean variables $\vec{\maxSatVariable}=(\maxSatVariablei{1}, \maxSatVariablei{2}, \dots, \maxSatVariablei{\maxSatVariables})^T$ which each can be either \texttt{true} or \texttt{false}%
-\item<4-> Goal: find a setting for these variables so that $\maxSatFormula$ becomes \texttt{true}%
-\item<5-> \maxSatFormula\ consists of \maxSatClauses\ clauses which are combined with \inQuotes{$\land$}%
+\item Given: Formula \maxSatFormula\ in Boolean logic%
+\uncover<3->{ with of \maxSatVariables\ Boolean variables $\vec{\maxSatVariable}=(\maxSatVariablei{1}, \maxSatVariablei{2},\dots, \maxSatVariablei{\maxSatVariables})$%
+\uncover<4->{, which appear either directly or negated%
+\uncover<5->{ in \maxSatClauses\ \inQuotes{\texttt{or}} clauses%
+\uncover<6->{, which are all combined with into one \inQuotes{\texttt{and}}}}}}%
+\item<7-> \only<-7>{SAT Goal: find a setting for these variables so that $\maxSatFormula$ becomes \texttt{true}}%
+\only<8->{\maxSat\ Goal\scitep{HS2005SLSFAA}: minimize objective function $\objectiveFunctionb{\vec{x}} = \textnormal{number of clauses which are \texttt{false}}$.}%
+\item<9-> $\objectiveFunctionb{\vec{x}}=0$ $\Longrightarrow$ all clauses are \texttt{true}, SAT problem solved%
 \end{itemize}%
 }%
-%
-\item<6-> \maxSat\uncover<7->{%
-\begin{itemize}%
-\item SAT turned into an optimization problem\scitep{HS2005SLSFAA}%
-\item<8-> candidate solution: bit string of length \maxSatVariables\ holding the value of each variable%
-\item<9-> make as many clauses become \texttt{true} as possible%
-\item<10-> minimize objective function $\objectiveFunctionb{\vec{x}} = \textnormal{number of clauses which are \texttt{false}}$%
-\item<11-> $\objectiveFunctionb{\vec{x}}=0$ $\Longrightarrow$ all clauses are \texttt{true}, SAT problem solved%
-\item<12-> $\objectiveFunctionb{\vec{x}}=\maxSatClauses$ $\Longrightarrow$ all clauses are \texttt{false}%
-\end{itemize}%
-}%
-%
-\end{itemize}%
-%
-\locateGraphic{-5}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.54}%
-%
-\end{frame}%
-%
-\begin{frame}[t]%
-\frametitle{Investigated Algorithms}%
-\begin{itemize}%
-\item We want to compare the performance of six algorithms\uncover<2->{:%
+%%
+\item<10-> We want to compare the performance of \textcolor{red}{six different} (trivial) \textcolor{red}{algorithm setups}\uncover<11->{:%
 \begin{enumerate}%
-\item 1-flip Hill Climber\only<-2>{: starts with a random bit string, flips one of the \maxSatVariables\ bits in each iteration and keeps the new bit string if it is better}%
-\item<3-> 1-flip Hill Climber with Restarts\only<3>{ after $z$ moves without improvements; initially $z=1$ and increased by~$1$ after each restart}%
-\item<4-> 2-flip Hill Climber%
-\item<5-> 2-flip Hill Climber with Restarts%
-\item<6-> $m$-flip Hill Climber\only<6>{, $m$ chosen randomly according to geometric distribution}%
-\item<7-> $m$-flip Hill Climber with Restarts%
+\item 1-flip Hill Climber\only<-11>{: starts with a random bit string, flips one of the \maxSatVariables\ bits in each iteration and keeps the new bit string if it is better}%
+\item<12-> 1-flip Hill Climber with Restarts\only<-12>{ after $z$ moves without improvements; initially $z=1$ and increased by~$1$ after each restart}%
+\item<13-> 2-flip Hill Climber%
+\item<14-> 2-flip Hill Climber with Restarts%
+\item<15-> $m$-flip Hill Climber\only<6>{, $m$ chosen randomly according to geometric distribution}%
+\item<16-> $m$-flip Hill Climber with Restarts%
+\end{enumerate}}%
 %
-\end{enumerate}%
-}%
-\item<8-> \alert{Which of these algorithms performs best? When? Why?}%
-\end{itemize}%
-\end{frame}%
+\item<17-> We investigate the algorithms on $10\times 10$ (simple) instances from \satLib\expandafter\scitep{\satLibReferences} with \textcolor{red}{ten different values of \maxSatVariables} from 20 to 250 (\maxSatClauses\ is fixed for each value of \maxSatVariables)
 %
-\begin{frame}%
-\frametitle{Benchmark}%
-\begin{itemize}%
-\item As benchmark, we use \emph{some} instances from \satLib\expandafter\scitep{\satLibReferences}\uncover<2->{:%
-\begin{center}%
-\medskip%
-\begin{small}%
-\begin{tabular}{|l|r|r||l|r|r|}%
-\hline%
-\textbf{Instance Set} & \textbf{\ensuremath{\mathbf{\maxSatVariables}}} & \textbf{\ensuremath{\mathbf{\maxSatClauses}}}&\textbf{Instance Set} & \textbf{\ensuremath{\mathbf{\maxSatVariables}}} & \textbf{\ensuremath{\mathbf{\maxSatClauses}}}\\%
-\hline%
-\texttt{uf020}&20&91&\texttt{uf150}&150&645\\%
-\texttt{uf050}&50&218&\texttt{uf175}&175&753\\%
-\texttt{uf075}&75&325&\texttt{uf200}&200&860\\%
-\texttt{uf100}&100&430&\texttt{uf225}&225&960\\%
-\texttt{uf125}&125&538&\texttt{uf250}&250&1065\\%
-\hline%
-\end{tabular}%
-\medskip%
-\end{small}%
-\end{center}%
-}%
-\item<3-> We pick the first ten instances from each set, i.e., test 100 instances in total%
-%\item<4-> All instances are satisfiable%
-%\item<5-> The problem instances have the following features\uncover<6->{:%
-%\begin{itemize}%
-%\item \maxSatVariables: the number of variables%
-%\item<7-> \maxSatClauses: the number of clauses (here related to \maxSatVariables)%
-%\end{itemize}%
-%}%
 \end{itemize}%
+%
+\locateGraphic{-2,7-9}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.54}%
+\locateGraphic{3}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_variables}{0.225}{0.54}%
+\locateGraphic{4}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_negation}{0.225}{0.54}%
+\locateGraphic{5}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_or}{0.225}{0.54}%
+\locateGraphic{6}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_and}{0.225}{0.54}%
+%
 \end{frame}%
 %
 %
@@ -167,7 +125,7 @@
 \end{frame}
 %
 \begin{frame}[t]{Obtained Data}%
-\def\shortcutForAfterExperimentText{e have $6*20*10*10=\numprint{12000}$ log files\only<-6>{!}\uncover<7->{ (with $\numprint{607993}$ log points and $8.6~\mebi\byte$ total)!}}%
+\def\shortcutForAfterExperimentText{$6*20*10*10=\numprint{12000}$ log files\only<-6>{!}\uncover<7->{ (with $\numprint{607993}$ log points and $8.6~\mebi\byte$ total)!}}%
 \parbox[t]{0.6\paperwidth}{%
 \bigskip%
 \begin{itemize}%
@@ -177,13 +135,13 @@
 \item {\dots}we have $20$ independent runs (log files)%
 \item<3-> for each of the $6$ algorithm setups,%
 \item<4-> on each of the $10$ benchmark instances%
-\item<5-> of each of the $10$ instance sets.%
-\item<6-> W\shortcutForAfterExperimentText%
+\item<5-> of each of the $10$ instance sets\uncover<6->{, i.e.,}%
+\item<6-> \shortcutForAfterExperimentText%
 \end{itemize}%
 }%
 }%
-\only<8->{ w\shortcutForAfterExperimentText}%
-\item<9-> \alert<-9>{How can we extract useful information from them\only<-8>{?}%
+\only<8->{ we have \shortcutForAfterExperimentText}%
+\item<9-> \alert<-10>{How can we extract useful information from them\only<-8>{?}%
 \uncover<10->{ in order to answer the questions which algorithm performs best, when, and why?}}%
 \item<11-> What you most likely do: Write your own small program.%
 \item<12-> What you now can do: Use our \optimizationBenchmarking\ evaluator!%
