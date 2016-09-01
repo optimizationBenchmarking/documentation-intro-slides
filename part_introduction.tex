@@ -21,7 +21,7 @@
 \begin{frame}[t]%
 \frametitle{Optimization}%
 \begin{itemize}%
-\item Many questions in the real world are actually optimization problems\only<2->{, e.g.,\only<-8>{%
+\item Many questions in the real world are actually optimization problems\only<2->{, e.g.,\only<-7>{%
 \begin{itemize}%
 %
 \item \only<-5>{Find the \emph{shortest} tour for a salesman to visit certain set of cities\only<-2>{ in China and return to Hefei!}}\only<6->{\alert<6>{Traveling Salesman Problem}\scitep{ABCC2006TTSPACS,LLKS1985TTSPAGTOCO,GP2004TTSPAIV,L2011SGEFTSPIMSS}}%
@@ -32,27 +32,27 @@
 %
 \item<5-> \only<-5>{I want to build a large factory with $n$ workshops. I know the flow of material between each two workshops and now need to choose the locations of the workshops such that the overall running cost incurred by material transportation is \emph{minimized}.}\only<6->{\alert<6>{Quadratic Assignment Problem}\scitep{MF1999ACOMATSAACFTQAP,GTD1999ACOQAP}}%
 \end{itemize}%
-}\only<9->{ the Traveling Salesman Problem\scitep{ABCC2006TTSPACS,LLKS1985TTSPAGTOCO,GP2004TTSPAIV,L2011SGEFTSPIMSS}}%
+}\only<8->{ the Traveling Salesman Problem\scitep{ABCC2006TTSPACS,LLKS1985TTSPAGTOCO,GP2004TTSPAIV,L2011SGEFTSPIMSS}}%
 }%
 %
-\item<7-> Many optimization problems are \alert<7>{\NPHard}, meaning that finding the best possible solution will usually not be possible in \alert<8>{feasible time}.%
+\item<7-> Many optimization problems are \NPHard, meaning that finding the \textcolor<9-11>{green}{best possible solution} will often take \textcolor<9-11>{green}{way too long}.%
 %
-\item<11-> It is easy to get \emph{some} solutions (usually of bad quality)%
+\item<10-> Of course, it is easy to get \textcolor<10-11>{red}{\emph{some} solutions (usually of bad quality)}%
 %
-\item<12-> We use metaheuristic optimization algorithms to give us good approximate solutions within acceptable runtime.%
-\item<13-> Examples of such algorithms are\only<-23>{ %
-Evolutionary Algorithms\scitep{BFM1997EA,CWM2011VOEAFRWA,BFM2000EC1BAAO,BFM2000EC2BAAO,DLJD2000EC,EM1999EC,CDGDMPP1999NIIO,GT2002AIECTAA,WGOEB}\uncover<14->{, %
-Ant Colony Optimization\scitep{DMC1996ACO,DS2004ACO,GM2002APBATDOP,ZBMD2004MBSFCOACS,WGOEB}\uncover<15->{, %
-Evolution Strategies\scitep{R1965ES,R1973ES,R1994ES,S1965KYASDEFIDS,S1968EOEZDT1,S1975EUNO,WGOEB}\uncover<16->{, %
-Differential Evolution\scitep{PSL2005DE,F2006DE,WGOEB}\uncover<17->{, %
-Particle Swarm Optimization\scitep{KE1995PSO,C2006PSO,WGOEB}\uncover<18->{, %
-Estimation of Distribution Algorithms\scitep{PSL2005DE,F2006DE,MMVRCC2006DE,BZSM2006DE,LZ2000DE,MM2005DE,BVPK2006DE,S2010DEFCFOAABKPARS}\uncover<19->{, %
-CMA-ES\scitep{HOG1995ESAD,HO1996AANMDIESTCMA,HO2001ESCMA,HMK2003RTTCOTDESWCMACE,HK2004ETCESOMTF,H2006TCESACR,AH2005ARCESWIPS,AH2005PEOAALSEA}\uncover<20->{, and %
-Local Search methods\scitep{HS2005SLSFAA,AL1997LSICO,DBSD2001DOILSA}\uncover<21->{ such as %
-Simulated Annealing\scitep{SSF2002FCAIFSA,LA1987SATAA,B1987GAASA,JCS2003HC,KGV1983SA,VC1985SA,DPSW1982MCTICO,DPSW1982MCTICO2,P1970AMCMFTASOCTOCOP,WGOEB}\uncover<22->{ or %
-Tabu Search\scitep{G1989TSPI,G1990TSPII,GL1993TABU,DWH1989TSTATAAATNN,BT1994TABU}\uncover<23->{, %
+\item<11-> We use metaheuristic optimization algorithms to give us good approximate solutions within acceptable runtime.%
+\item<12-> Examples of such algorithms are\only<-22>{ %
+Evolutionary Algorithms\scitep{BFM1997EA,CWM2011VOEAFRWA,BFM2000EC1BAAO,BFM2000EC2BAAO,DLJD2000EC,EM1999EC,CDGDMPP1999NIIO,GT2002AIECTAA,WGOEB}\uncover<13->{, %
+Ant Colony Optimization\scitep{DMC1996ACO,DS2004ACO,GM2002APBATDOP,ZBMD2004MBSFCOACS,WGOEB}\uncover<14->{, %
+Evolution Strategies\scitep{R1965ES,R1973ES,R1994ES,S1965KYASDEFIDS,S1968EOEZDT1,S1975EUNO,WGOEB}\uncover<15->{, %
+Differential Evolution\scitep{PSL2005DE,F2006DE,WGOEB}\uncover<16->{, %
+Particle Swarm Optimization\scitep{KE1995PSO,C2006PSO,WGOEB}\uncover<17->{, %
+Estimation of Distribution Algorithms\scitep{PSL2005DE,F2006DE,MMVRCC2006DE,BZSM2006DE,LZ2000DE,MM2005DE,BVPK2006DE,S2010DEFCFOAABKPARS}\uncover<18->{, %
+CMA-ES\scitep{HOG1995ESAD,HO1996AANMDIESTCMA,HO2001ESCMA,HMK2003RTTCOTDESWCMACE,HK2004ETCESOMTF,H2006TCESACR,AH2005ARCESWIPS,AH2005PEOAALSEA}\uncover<19->{, and %
+Local Search methods\scitep{HS2005SLSFAA,AL1997LSICO,DBSD2001DOILSA}\uncover<20->{ such as %
+Simulated Annealing\scitep{SSF2002FCAIFSA,LA1987SATAA,B1987GAASA,JCS2003HC,KGV1983SA,VC1985SA,DPSW1982MCTICO,DPSW1982MCTICO2,P1970AMCMFTASOCTOCOP,WGOEB}\uncover<21->{ or %
+Tabu Search\scitep{G1989TSPI,G1990TSPII,GL1993TABU,DWH1989TSTATAAATNN,BT1994TABU}\uncover<22->{, %
 as well as hybrids of local and global search, such as Memetic Algorithms\scitep{M1989MA,M2002MA,MC2003AGITMA,ES2003HWOTMA,HKS2005RAIMA,DM2004MA,RS1994FMA}%
-}}}}}}}}}}}\only<24->{\dots\ many}%
+}}}}}}}}}}}\only<23->{\dots\ \alert{many}}%
 %
 \item<24-> \alert<24>{Which of them is best (for my problem)?}%
 \item<25-> \alert<25>{How can I make a good algorithm better (for my problem)?}%
@@ -64,12 +64,12 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 \locateGraphic{3}{width=0.875\paperwidth}{graphics/problem_examples/bin_packing/bin_packing}{0.0625}{0.495}%
 \locateGraphic{4}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.5}%
 \locateGraphic{5}{width=0.85\paperwidth}{graphics/problem_examples/qap/qap}{0.075}{0.625}%
-\locateGraphic{7-8}{width=0.75\paperwidth}{graphics/exponential_functions/exponential_functions}{0.1625}{0.55}%
+\locateGraphic{7}{width=0.75\paperwidth}{graphics/exponential_functions/exponential_functions}{0.1625}{0.55}%
 %
-\locateGraphic{9}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_1}{0.125}{0.53}%
-\locateGraphic{10}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_2}{0.125}{0.53}%
-\locateGraphic{11}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_3}{0.125}{0.53}%
-\locateGraphic{12}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept}{0.125}{0.53}%
+\locateGraphic{8}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_1}{0.125}{0.53}%
+\locateGraphic{9}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_2}{0.125}{0.53}%
+\locateGraphic{10}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept_3}{0.125}{0.53}%
+\locateGraphic{11}{width=0.75\paperwidth}{graphics/optimization_concept/optimization_concept}{0.125}{0.53}%
 %
 \end{frame}%
 %
@@ -87,7 +87,7 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 \item<6-> All metaheuristics are Anytime Algorithms.%
 \item<7-> Several exact methods like Branch-and-Bound\scitep{LMSK1963AAFTTSP,Z1993TBABACSOTATSP,Z1999TAADFBABACSOTATSP} are Anytime Algorithms.%
 \item<8-> Consequence: Most optimization algorithms produce approximate solutions of different qualities at different points during their process.%
-\item<9-> Experiments must capture solution quality and runtime data.%
+\item<9-> \alert{Experiments must capture data on the whole runtime behavior!}%
 }%
 \item<10-> If we just compare \inQuotes{final} results, we may arrive at incomplete \only<12->{or entirely wrong} conclusions%
 \end{itemize}%
