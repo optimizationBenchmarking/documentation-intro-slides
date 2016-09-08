@@ -6,14 +6,8 @@
 \begin{itemize}%
 \item Concept of optimization algorithms% 
 \item<2-> How to \alert<4>{benchmark} optimization algorithms%
-\item<3-> How to \alert<4>{evaluate data} obtained from benchmarking and how to compare algorithms
-\item<4-> \alert<4>{The \optimizationBenchmarking\ Framework can help with this\only<-4>{!}}\uncover<5->{:%
-\begin{itemize}%
-\item It provides a graphical user interface for loading, adding meta-data (algorithm setup\dots) to, and evaluating experimental results.%
-\item<6-> It can run as Docker container under Linux, MacOS, and Windows without needing \emph{any} additional software (except Docker and a browser).% 
-\item<7-> It produces reports, similar to articles, in \LaTeX\ with figures and building blocks ready for use in your publications%
-\end{itemize}%
-}%
+\item<3-> How to \alert<4>{evaluate data} obtained from benchmarking and how to compare algorithms%
+\item<4-> \alert<4>{The \optimizationBenchmarking\ Framework can help with this!}%
 \end{itemize}%
 \end{frame}%
 %
@@ -108,7 +102,7 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 \begin{itemize}%
 \item The following experimentation procedure is suitable for optimization and Machine Learning\uncover<2->{:%
 \begin{enumerate}%
-\item Select a set of (well-known) benchmark instances which covers some \textcolor<18>{red}{different problem features}\only<-11>{ \alert{(done)}}\only<3-4>{:%
+\item Select a set of (well-known) benchmark instances which covers some \textcolor<18>{red}{different problem features}\only<5->{ \alert{(done)}}\only<3-4>{:%
 \begin{itemize}%
 %
 \only<-3>{%
@@ -120,7 +114,7 @@ as well as hybrids of local and global search, such as Memetic Algorithms\scitep
 %
 \end{itemize}%
 }%
-\item<5-> Do experiments\only<11->{ with \textcolor<18>{red}{different algorithms/setups}\only<-11>{ \alert{(done)}}}\only<6-10>{:%
+\item<5-> Do experiments\only<11->{ with \textcolor<18>{red}{different algorithms/setups}\only<11->{ \alert{(done)}}}\only<6-10>{:%
 \begin{itemize}%
 \item several independent runs of algorithm for each benchmark instance%
 \item<7-> collect algorithm progress information, e.g., as \emph{\inQuotes{(runtime, best-objective-value-so-far)}} tuples%

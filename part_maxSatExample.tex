@@ -30,15 +30,28 @@
 \end{itemize}%
 }%
 %%
-\item<10-> We want to compare the performance of \textcolor<10-11,14->{red}{six different} (trivial) \textcolor<10-11,14->{red}{algorithm setups}\uncover<11->{:%
+\item<10-> We want to compare the performance of \textcolor<10-11,14->{red}{six different} (trivial) \textcolor<10-11,14->{red}{algorithm setups}\only  <12->{ differing in two parameters}\uncover<11->{:%
 \begin{enumerate}%
-\item \textcolor<12>{orange}{1-flip} Hill Climber \textcolor<13>{orange}{without Restarts}%
-\item \textcolor<12>{orange}{1-flip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
-\item \textcolor<12>{violet}{2-flip} Hill Climber \textcolor<13>{orange}{without Restarts}%
-\item \textcolor<12>{violet}{2-flip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
-\item \textcolor<12>{cyan}{$m$-flip} Hill Climber \textcolor<13>{orange}{without Restarts}%
-\item \textcolor<12>{cyan}{$m$-flip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
-\end{enumerate}}%
+\item \textcolor<12>{orange}{\oFlip} Hill Climber \textcolor<13>{orange}{without Restarts}%
+\item \textcolor<12>{orange}{\oFlip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
+\item \textcolor<12>{violet}{\tFlip} Hill Climber \textcolor<13>{orange}{without Restarts}%
+\item \textcolor<12>{violet}{\tFlip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
+\item \textcolor<12>{cyan}{\mFlip} Hill Climber \textcolor<13>{orange}{without Restarts}%
+\item \textcolor<12>{cyan}{\mFlip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
+\end{enumerate}%
+%
+\only<12>{\smallskip%
+\small{%
+\textcolor<12>{orange}{\oFlip}: one variable flipped in the current solution at each step, %
+\textcolor<12>{violet}{\tFlip}: two variables flipped, %
+\textcolor<12>{cyan}{\mFlip}: number $m$ of variables to flip chosen according to geometric distribution% 
+}}%
+%
+\only<13>{\smallskip%
+\small{%
+\textcolor<13>{cyan}{with Restarts}: if no improvement for $z$ steps, restart and set $z=z+1$, initially $z=1$, %
+\textcolor<13>{orange}{without Restarts}: doesn't do this%
+}}}%
 %
 \item<14-> We investigate the algorithms on $10\times 10$ (simple) instances from \satLib\expandafter\scitep{\satLibReferences} with \textcolor{red}{ten different values of \maxSatVariables} from 20 to 250 (\maxSatClauses\ is fixed for each value of \maxSatVariables)
 %
@@ -141,10 +154,12 @@
 }%
 }%
 \only<8->{ we have \shortcutForAfterExperimentText}%
-\item<9-> \alert<-10>{How can we extract useful information from them\only<-8>{?}%
-\uncover<10->{ in order to answer the questions which algorithm performs best, when, and why?}}%
-\item<11-> What you most likely do: Write your own small program.%
-\item<12-> What you now can do: Use our \optimizationBenchmarking\ evaluator!%
+\item<9-> \alert<-12>{How can we extract useful information from them\only<-8>{?}%
+\uncover<10->{ in order to answer the questions which algorithm performs best, when, and why?}%
+\uncover<11->{ What is the impact of the benchmark feature \maxSatVariables\ on the performance?}%
+\uncover<12->{ What is the impact of the search operator and the restarts on the performance?}}%
+\item<13-> What you most likely do: Write your own small program.%
+\item<14-> What you now can do: Use our \optimizationBenchmarking\ evaluator!%
 \end{itemize}%
 }%
 %
