@@ -30,17 +30,17 @@
 \end{itemize}%
 }%
 %%
-\item<10-> We want to compare the performance of \textcolor{red}{six different} (trivial) \textcolor{red}{algorithm setups}\uncover<11->{:%
+\item<10-> We want to compare the performance of \textcolor<10-11,14->{red}{six different} (trivial) \textcolor<10-11,14->{red}{algorithm setups}\uncover<11->{:%
 \begin{enumerate}%
-\item 1-flip Hill Climber\only<-11>{: starts with a random bit string, flips one of the \maxSatVariables\ bits in each iteration and keeps the new bit string if it is better}%
-\item<12-> 1-flip Hill Climber with Restarts\only<-12>{ after $z$ moves without improvements; initially $z=1$ and increased by~$1$ after each restart}%
-\item<13-> 2-flip Hill Climber%
-\item<14-> 2-flip Hill Climber with Restarts%
-\item<15-> $m$-flip Hill Climber\only<6>{, $m$ chosen randomly according to geometric distribution}%
-\item<16-> $m$-flip Hill Climber with Restarts%
+\item \textcolor<12>{orange}{1-flip} Hill Climber \textcolor<13>{orange}{without Restarts}%
+\item \textcolor<12>{orange}{1-flip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
+\item \textcolor<12>{violet}{2-flip} Hill Climber \textcolor<13>{orange}{without Restarts}%
+\item \textcolor<12>{violet}{2-flip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
+\item \textcolor<12>{cyan}{$m$-flip} Hill Climber \textcolor<13>{orange}{without Restarts}%
+\item \textcolor<12>{cyan}{$m$-flip} Hill Climber \textcolor<13>{cyan}{with Restarts}%
 \end{enumerate}}%
 %
-\item<17-> We investigate the algorithms on $10\times 10$ (simple) instances from \satLib\expandafter\scitep{\satLibReferences} with \textcolor{red}{ten different values of \maxSatVariables} from 20 to 250 (\maxSatClauses\ is fixed for each value of \maxSatVariables)
+\item<14-> We investigate the algorithms on $10\times 10$ (simple) instances from \satLib\expandafter\scitep{\satLibReferences} with \textcolor{red}{ten different values of \maxSatVariables} from 20 to 250 (\maxSatClauses\ is fixed for each value of \maxSatVariables)
 %
 \end{itemize}%
 %
@@ -320,7 +320,7 @@ implement the corresponding interface%
 \frametitle{Usage Summary}%
 \begin{enumerate}%
 \item Implement your optimization or Machine Learning or whatever algorithm%
-\item<2-> Select a well-known set of benchmark instances%
+\item<2-> Select a set of benchmark instances%
 \item<3-> Run experiments and obtain one output folder per experiment with log files\medskip%
 \item<4-> Put \texttt{dimensions.xml} into results folder (write it with the GUI)%
 \item<5-> Put \texttt{instances.xml} into results folder (write it with the GUI)%
