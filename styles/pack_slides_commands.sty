@@ -7,32 +7,41 @@
 %%%
 %%% The definition for the title page.
 %%%
-\defbeamertemplate*{title page}{UBRI}[1][]{%
+\defbeamertemplate*{title page}{IAO}[1][]{%
 \vbox{}%
 \strut\vfill\strut%
-\begin{centering}%
+\centering%
 \vfill\vfill\vfill\vfill%
 {\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle}%
-\vfill%
 \begingroup{\ifx\insertsubtitle\empty%
-\else%
-\usebeamercolor[fg]{title}\usebeamerfont{title}\large{\insertsubtitle}
+\vfill%
+\else\par%
+\usebeamercolor[fg]{title}\usebeamerfont{title}\large{\insertsubtitle}%
 \vfill%
 \fi}\endgroup%
 \begin{beamercolorbox}[center,#1]{author}%
-\usebeamercolor[bg]{frametitle}\usebeamerfont{author}\insertauthor%
+\usebeamercolor[fg]{title}\usebeamerfont{author}\insertauthor%
 \end{beamercolorbox}\vfill%
 \begin{beamercolorbox}[center,#1]{institute}%
 \usebeamercolor[fg]{title}\usebeamerfont{institute}\insertinstitute%
 \end{beamercolorbox}\vfill%
+%
+%% insert date only if actually set
+\ifx\relax\insertdate\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi%
+{}{%
 \begin{beamercolorbox}[center,#1]{date}%
 \usebeamercolor[fg]{title}\usebeamerfont{date}\insertdate%
 \end{beamercolorbox}%
-\end{centering}
+}%
 \vfill\vfill\vfill\vfill\vfill%
 }%
 %
 %
+\global\let\insertdate\relax%
 %
 %
 %
@@ -50,17 +59,28 @@
 \hspace{-0.005\paperwidth}%
 \vspace{-0.005\paperheight}%
 \includegraphics[width=1.01\paperwidth,height=1.01\paperheight]{%
-./graphics/ustc/ustc_slides_cover/ustc_slides_cover}}%
+./graphics/iao/iao_slides_cover/iao_slides_cover}}%
 %
 \begin{frame}%
 \titlepage%
 \end{frame}%
 %
 %
-\defbeamertemplate*{footline}{UBRI}{%
-{\color{footerdarkblue}%
+\defbeamertemplate*{footline}{IOAO}{%
+{\color{footlineForeground}%
 \strut\hfill%
-{\insertshorttitle}, {\insertshortdate{}}%
+{\insertshorttitle}%
+%%
+%% insert date only if actually set
+\ifx\relax\insertdate\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi%
+{}{, {\insertshortdate{}}%
+%
+}%
+%
 \hfill\hfill%
 {\insertshortauthor}%
 \hfill\hfill%
@@ -70,12 +90,12 @@
 }}%
 %
 %
-\pgfdeclareimage[width=1.01\paperwidth,height=1.01\paperheight]{ustc_slides_background}{%
-./graphics/ustc/ustc_slides_background/ustc_slides_background}%
+\pgfdeclareimage[width=1.01\paperwidth,height=1.01\paperheight]{iao_slides_background}{%
+./graphics/iao/iao_slides_background/iao_slides_background}%
 \usebackgroundtemplate{%
 \hspace{-0.005\paperwidth}%
 \vspace{-0.005\paperheight}%
-\pgfuseimage{ustc_slides_background}}%
+\pgfuseimage{iao_slides_background}}%
 %
 \begin{frame}%
 \frametitle{Outline}%
@@ -83,6 +103,39 @@
 #1%
 \end{frame}%
 %
+%
+\if\relax\detokenize{\@authorRaw}\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi%
+{}{\author[\@authorPlain]{\@authorRaw}}%
+%
+\institute{%
+%
+\@blUni%
+%
+\if\relax\detokenize{\@blGroup}\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi%
+{%
+\if\relax\detokenize{\@blFaculty}\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi%
+{}{\\\@blFaculty}%
+}{\\\@blGroup}%
+%
+\if\relax\detokenize{\@blAddressA}\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi%
+{}{\\\@blAddressA}%
+}%
 }%
 %
 %%%
@@ -98,23 +151,31 @@
 \hspace{-0.005\paperwidth}%
 \vspace{-0.005\paperheight}%
 \includegraphics[width=1.01\paperwidth,height=1.01\paperheight]{%
-./graphics/ustc/ustc_slides_final/ustc_slides_final}}%
+./graphics/iao/iao_slides_final/iao_slides_final}}%
 %
 \begin{frame}%
 \pdfbookmark[1]{Presentation End}{presentationEnd}%
 \strut\par\bigskip\par\strut%%
-\parbox{0.4\paperwidth}{%
-\scalebox{2}{\textbf{\LARGE{\zh{谢谢！}}}}\bigskip\par%
-\scalebox{1.2}{\textbf{\LARGE{Thank you.}}}\bigskip\par%
-\insertauthor\bigskip\par%
-\insertinstitute%
-}%
+\parbox{0.434\paperwidth}{\flushright%
+\scalebox{2}{\textbf{\LARGE{\textcolor{headlineForeground}{\zhb{谢谢}}}}}\bigskip\par%
+\scalebox{1.2}{\textbf{\LARGE{\textcolor{headlineForeground}{Thank you}}}}\bigskip\par%
+~%
+\parbox{0.42\paperwidth}{\flushright%
+\textcolor{headlineForeground}{\insertauthor}\bigskip\par%
+\textcolor{headlineForeground}{\insertinstitute}%
+}}%
 \end{frame}%
+%
+\ifnum\@bib@numcites>0\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi{%
 %
 \usebackgroundtemplate{%
 \hspace{-0.005\paperwidth}%
 \vspace{-0.005\paperheight}%
-\pgfuseimage{ustc_slides_background}}%
+\pgfuseimage{iao_slides_background}}%
 %
 %
 \begin{frame}%%
@@ -122,7 +183,7 @@
 \pdfbookmark[1]{\bibname}{bibliographyZ}%
 \begin{center}%
 \strut\vfill\par%
-\includegraphics[width=0.5\paperwidth]{./graphics/ustc/ustc_slides_bibliography/ustc_slides_bibliography}%
+\includegraphics[width=0.5\paperwidth]{./graphics/iao/iao_slides_bibliography/iao_slides_bibliography}%
 \par\vfill\strut%
 \end{center}%
 \end{frame}%
@@ -136,11 +197,13 @@
 \bibliography{./bibliography/bibliography}%
 \end{tiny}%
 \end{frame}%
+}{}%
 %
 \global\let\@framePatch\@framePatch@addBookmarks%
 %
 }%
 %
+% define appendix command; print #1 on appendix slide
 \gdef\appendices#1{%
 \pdfbookmark[1]{Appendices}{appendices}%
 \section*{Appendices}%
@@ -158,7 +221,6 @@
 \expandafter\pdfbookmark\expandafter[\expandafter2\expandafter]\expandafter{##1}{appendix\the\@appendix@hrefids}%
 \subsection{##1}%
 }%
-%
 }%
 %
 %
@@ -174,12 +236,11 @@
 {\message{** patching of \string\beamer@@frametitle failed **}}%
 %
 %
-\gdef\printSectionOutlines#1{%
+\gdef\printSectionOutlines{%
 \AtBeginSection[]{%
 \begin{frame}%
 \frametitle{Section Outline}%
 \tableofcontents[currentsection,subsectionstyle=show/show/hide]%
-#1%
 \end{frame}%
 }%
 }%

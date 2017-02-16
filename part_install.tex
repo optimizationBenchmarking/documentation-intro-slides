@@ -9,24 +9,26 @@
 %
 \begin{itemize}%
 %
-\item \alert{Stand-Alone GUI}: easily store, annotate, and process your experimental results:%
+\item \alert{Stand-Alone GUI}: easily store, annotate, and process your experimental results:\\\noindent%
+\resizebox{0.8\paperwidth}{!}{\parbox{0.9\paperwidth}{%
 \begin{itemize}%
 \item client/server application: computation at the server, joint repository for data of your group%
 \item software requirements: Java~7~JDK\scitep{JAVA2PSESAS}, TeX~Live\scitep{TEXLIVE}, \codeil{R}\scitep{WU2006TRPFSC} with several packages%
 \item download software from web page%
 \item \mbox{\codeil{java -jar evaluatorGui.jar}}%
 \item open browser to \codeil{http://localhost:8080}%
-\end{itemize}%
+\end{itemize}}}%
 %
 \uncover<2->{%
 \vfill\vfill%
 %
-\item \alert{Application Dockerized for you!}%
+\item \alert{Application Dockerized for you!}\\\noindent%
+\resizebox{0.8\paperwidth}{!}{\parbox{0.9\paperwidth}{%
 \begin{itemize}%
 \item install Docker from\\\url{http://www.docker.com/} and do%
 \item \mbox{\codeil{docker run -t -i -p 9999:8080/tcp}} \mbox{\codeil{optimizationbenchmarking/evaluator-gui}}%
 \item open browser to \codeil{http://localhost:9999} on Linux, replace \codeil{localhost} with the IP address of the Docker container under Windows or Mac OS%
-\end{itemize}%
+\end{itemize}}}%
 %
 \vfill%
 }%

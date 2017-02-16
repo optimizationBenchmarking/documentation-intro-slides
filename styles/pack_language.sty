@@ -27,7 +27,7 @@
 %% use it. Otherwise, we will attempt to use CJKutf8 instead.
 \newif\ifCanUseCtex%
 \CanUseCtexfalse%
-\ifxetex% 
+\ifxetex%
 \CanUseCtextrue%
 \else%
 \ifluatex%
@@ -72,7 +72,7 @@
 \let\internalBegin\begin%
 \let\internalEnd\end%
 \RequirePackage{CJKutf8}%
-\protected\gdef\zh##1{\internalBegin{CJK}{UTF8}{gbsn}##1\internalEnd{CJK}}%
+\protected\gdef\zh##1{\internalBegin{CJK}{UTF8}{gkai}##1\internalEnd{CJK}}%
 \protected\gdef\zhb##1{\mbox{\zh{##1}}}%
 }{%
 % OK, we neither have ctex nor CJKutf8. So we just hope for the best

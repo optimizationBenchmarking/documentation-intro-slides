@@ -5,49 +5,62 @@
 \useinnertheme{rectangles}%
 \useoutertheme{infolines}%
 %
-\definecolor{footerdarkblue}{rgb}{0.04,0.13333333333333333333333333333333,0.6039215686274509803921568627451}%
-\definecolor{blockbgblue}{rgb}{0.77647058823529411764705882352941,0.85098039215686274509803921568627,0.94509803921568627450980392156863}%
-\definecolor{blocktitlebgblue}{rgb}{0.5,0.6,0.9}%
-\definecolor{alertviolet}{rgb}{0.43921568627450980392156862745098,0.18823529411764705882352941176471,0.62745098039215686274509803921569}%
-\definecolor{alertvioletB}{rgb}{0.8,0.75294117647058823529411764705882,0.85098039215686274509803921568627}%
-\definecolor{alertvioletC}{rgb}{0.619607843137254901960784313725,0.470588235294117647058823529411,0.7392156862745098039215686274505}%
-\definecolor{exampleBody}{rgb}{0.91764705882352941176470588235294,0.94509803921568627450980392156863,0.86666666666666666666666666666667}%
-\definecolor{exampleHead}{rgb}{0.57254901960784313725490196078431,0.81568627450980392156862745098039,0.31372549019607843137254901960784}%
+\definecolor{headlineBackground}{cmyk}{0.08,0.37,0.49,0}%
+\definecolor{logoRed}{cmyk}{0.3,1,1,0}%
+\definecolor{logoOrange}{cmyk}{0,0.65,1,0}%
+%
+\definecolor{listingcommentgray}{gray}{0.6}%
+\colorlet{inlineCodeFrame}{red!10!white}%
+\colorlet{inlineCodeBg}{blue!10!white}%
+%
+\colorlet{headlineForeground}{logoRed}%
+\colorlet{itemBackground}{logoRed!90!black}%
+\colorlet{itemForeground}{logoOrange!90!white}%
+\colorlet{alert}{logoRed}%
+\colorlet{footlineForeground}{headlineForeground}%
+\colorlet{citationColor}{footlineForeground}%
+\colorlet{blockTitleBackground}{logoRed}%
+\colorlet{blockTitleForeground}{logoOrange}%
+\colorlet{blockBackground}{headlineBackground}%
+%
+\setbeamercolor{section in toc}{fg=footlineForeground}%
+\setbeamercolor{subsection in toc}{fg=footlineForeground}%
 %
 \setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}%
 \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}%
 \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}%
 \setbeamercolor*{palette quaternary}{fg=white,bg=black}%
 %
-\setbeamercolor*{title}{parent=palette primary,fg=white}%
+\setbeamercolor*{title}{parent=palette primary,fg=headlineBackground}%
 %
-\setbeamercolor*{block title}{use=structure,fg=black,bg=blocktitlebgblue}%
+\setbeamercolor*{block title}{use=structure,fg=blockTitleForeground,bg=blockTitleBackground}%
 \setbeamercolor*{block title alerted}{parent=block title}%
-\setbeamercolor*{block title example}{parent=block title,bg=exampleHead}%
-\setbeamercolor*{block body}{parent=palette primary,fg=black,bg=blockbgblue}%
+\setbeamercolor*{block body}{parent=palette primary,fg=black,bg=blockBackground}%
 \setbeamercolor*{block body alerted}{parent=block body}%
-\setbeamercolor*{block body example}{parent=block body,bg=exampleBody}%
-\setbeamercolor*{alerted text}{parent=palette primary, fg=alertviolet}%
-\definecolor{listingcommentgray}{gray}{0.6}%
+\setbeamercolor*{alerted text}{parent=palette primary, fg=alert}%
 %
-\setbeamercolor*{block title alerted}{fg=black,bg=alertvioletC}%
-\setbeamercolor*{block body alerted}{fg=black,bg=alertvioletB}%
-%
-\setbeamercolor*{frametitle}{fg=yellow!260!white}%
-\setbeamercolor*{framesubtitle}{fg=black}%
+\setbeamercolor*{frametitle}{fg=headlineForeground}%
+\setbeamercolor*{framesubtitle}{fg=footlineForeground}%
 %
 %%%
 %%% Templates for different slide elements
 %%%
 \setbeamertemplate{bibliography item}[book]%
 %
-\setbeamertemplate{items}[ball]%
-\setbeamertemplate{item}[ball]%
-\setbeamercolor{subitem projected}{bg=blocktitlebgblue}%
-\setbeamercolor{item projected}{bg=blocktitlebgblue}%
-\setbeamercolor{items projected}{bg=blocktitlebgblue}%
+\setbeamertemplate{items}[circle]%
+\setbeamertemplate{item}[circle]%
+\setbeamercolor*{item}{fg=itemBackground}
+\setbeamercolor*{items}{fg=itemBackground}
+\setbeamercolor*{subitem}{fg=itemBackground}
+\setbeamercolor*{subitems}{fg=itemBackground}
+\setbeamercolor{enumerate items}{fg=itemBackground}
+\setbeamercolor{itemize item}{fg=itemBackground}
 %
-\setbeamertemplate{sections/subsections in toc}[ball]%
+\setbeamercolor{subitem projected}{fg=itemForeground}%
+\setbeamercolor{item projected}{fg=itemForeground}%
+\setbeamercolor{items projected}{fg=itemForeground}%
+%
+\setbeamertemplate{sections/subsections in toc}[circle]%
 \setbeamerfont{section number projected}{family=\sffamily,series=\bfseries,size=\normalsize}%
 %
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=false,shadow=true]
@@ -59,10 +72,10 @@
 %
 %%%
 %%% Some internal commands to get headlines nicely vertically aligned.
-%%% 
+%%%
 \newlength{\@blabtmpFTL}%
 \newsavebox{\@blabtmpFTLbox}%
-\defbeamertemplate*{frametitle}{UBRI}{%
+\defbeamertemplate*{frametitle}{IOAO}{%
 \vspace*{3pt}%
 \savebox{\@blabtmpFTLbox}{\mbox{{\usebeamerfont{frametitle}{\insertframetitle}}}}%
 \usebeamerfont{frametitle}{%
@@ -85,7 +98,7 @@
 %%%
 %%% Auxilliary definitions.
 %%%
-\defbeamertemplate*{navigation symbols}{UBRI}{}%
+\defbeamertemplate*{navigation symbols}{IOAO}{}%
 %
 \setbeamerfont{block title example}{parent={block title},size=\footnotesize}%
 \setbeamerfont{block body example}{parent={block body},size=\footnotesize}%

@@ -115,7 +115,7 @@ image~source:~#1%
 }%
 %
 %
-%% Locate a graphic with frame at a specific position 
+%% Locate a graphic with frame at a specific position
 %% #1 visibility passed to \only (set to {} for always-visible things)
 %% #2 the [] part of the graphic
 %% #3 the path to the graphic
@@ -126,8 +126,11 @@ image~source:~#1%
 \begingroup%
 \setlength{\fboxrule}{3pt}%
 \setlength{\fboxsep}{3pt}%
-\fcolorbox{white}{blocktitlebgblue}{%
-\includegraphics[#2]{#3}}%
+\fcolorbox{white}{blockTitleBackground}{%
+\setlength{\fboxrule}{0pt}%
+\setlength{\fboxsep}{0pt}%
+\fcolorbox{white}{white}{%
+\includegraphics[#2]{#3}}}%
 \endgroup%
 }{#4}{#5}%
 }%
@@ -154,7 +157,7 @@ image~source:~#1%
 \fi%
 %
 \if\relax\detokenize{#7}\relax%
-\edef\@bgbox@tmpc@B{blocktitlebgblue}%
+\edef\@bgbox@tmpc@B{blockTitleBackground}%
 \else%
 \edef\@bgbox@tmpc@B{#7}%
 \fi%
